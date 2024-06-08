@@ -1,0 +1,72 @@
+@media (max-width:1200px) {
+    .oymo{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .oymo__about,.oymo__block{
+        width: 80%;
+        gap: 30px;
+        justify-content: center;
+    }
+    .oymo__box:nth-child(1),.oymo__box:nth-child(2){
+        margin-bottom: 0;
+    }
+}
+@media (max-width:992px) {
+    .header__nav {
+        flex-direction: column;
+        padding-top: 15px;
+    }
+    .header__list{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .header__link{
+        padding: 10px 15px;
+    }
+    .oymo__about,.oymo__block{
+        width: 90%;
+    }
+    .footer__block{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+@media (max-width:768px) {
+    .oymo__about,.oymo__block{
+        width: 100%;
+        gap: 20px;
+    }
+    .footer__block{
+        flex-direction: column;
+    }
+}
+@media (max-width:576px) {
+    .footer__form{
+        width: 100%;
+    }
+}
+* Стили для корзины */
+.cart {
+  margin-top: 20px;
+}
+
+/* Стили для иконки корзины */
+.cart-icon {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Стили для выпадающего списка корзины */
+.cart-items {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+

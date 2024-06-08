@@ -1,0 +1,306 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{background: rgb(3, 3, 4);}
+
+.container{
+    max-width: 1140px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.header{
+    background:  #322E41;
+    height: 70%;
+}
+    
+.header__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__logo{
+    width: 100px;
+    height: 100%;
+}
+.header__logo img{
+    width: 100%;
+    height: 100%;
+}
+.header__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.header__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header__link{
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    text-decoration: none;
+    padding: 23px 22px;
+    display: block;
+    transition: 0.3s;
+}
+.header__link:hover{
+    color: #D47300;
+    background: #fff;
+}
+.header-content{
+    height: 20vh;
+    background: url(https://png.pngtree.com/thumb_back/fw800/background/20230526/pngtree-abstract-wave-wavy-background-black-wavy-wallpaper-texture-image_2648677.jpg) center/cover no-repeat;
+    display: flex;
+    justify-content: unset;
+    align-items: center;
+    flex-direction: column;
+}
+.header__title{
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.header__text{
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.header__text span{
+    font-weight: 700;
+}
+
+.oymo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -30px;
+}
+.oymo__about{
+    width: 400px;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqx-wTGcSaMrQNf-0M_1nCzsk0MWk8K_Ghbg&usqp=CAU);
+    border-radius: 6px;
+    padding: 15px;
+}
+.oymo__about-image{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.oymo__title{
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 22px;
+    color: hwb(240 93% 7%);
+    margin-bottom: 10px;
+}
+.oymo__about-text{
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #9B9B9B;
+}
+.oymo__block{
+    width: 540px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* gap: 30px; */
+}
+.oymo__box{
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqx-wTGcSaMrQNf-0M_1nCzsk0MWk8K_Ghbg&usqp=CAU);
+    border-radius: 6px;
+    width: 255px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+.oymo__box:nth-child(1),.nike__box:nth-child(2){
+    margin-bottom: 30px;
+}
+.oymo__box-image{
+    width: 80px;
+    height: 80px;
+    border: 2px solid #D47300;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.oymo__box-image img{
+    width: 66px;
+}
+.oymo__box-text{
+    color: #9B9B9B;
+    text-align: center;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+
+.footer{
+    background: #322E41;
+    padding: 40px 0;
+    margin-top: 30px;
+}
+.footer__block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__form{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+.footer__input{
+    padding: 10px;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    outline: none;
+}
+.footer__area{
+    height: 86px;
+    padding: 10px;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    outline: none;
+    resize: none;
+}
+.footer__button{
+    padding: 10px;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #544294;
+    color: #fff;
+    transition: .3s;
+}
+.footer__button:hover{
+    background: #D47300;
+    color: #fff;
+}
+.footer__nav{
+    width: 235px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__item{
+    list-style: none;
+    margin-bottom: 10px;
+}
+.footer__link{
+    text-decoration: none;
+    color: #fff;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+}
+.footer__link:hover{
+    color: #D47300;
+}
+.footer__media{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart {
+    border: 2px solid #fff7f7;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#cart {
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cart-item button {
+    background-color: #dc3545;
+}
+
+.cart-item button:hover {
+    background-color: #c82333;
+}
+
+#total {
+    font-weight: bold;
+    margin-top: 20px;
+}
+.cart.add-to-cart:hover{
+    background:#c82333;
+}
+.cart.add-to-cart:active{
+    background: #007bff;
+}
