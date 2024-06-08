@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/font.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>OYMO</title>
+    <style>
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .cart-container {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .cart-container h2 {
+            margin-top: 0;
+        }
+
+        .cart-container p {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-container button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav container">
+            <a href="" class="header__logo">
+                <img src="./images/logo.png" alt="лого">
+            </a>
+            <ul class="header__list">
+                <li class="header__item">
+                    <a href="./t-shirt.html" class="header__link">Футболки</a>
+                </li>
+                <li class="header__item">
+                    <a href="./sweetshot.html" class="header__link">Свитшоты</a>
+                </li>
+                <li class="header__item">
+                    <a href="./tolstovka.html" class="header__link">Толстовки</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1 class="header__title">OYMO</h1>
+            <p class="header__text">Крутые модные одежды<span> OYMO</span></p>
+        </div>
+    </header>
+    <main>
+        <div class="container oymo">
+            <div class="oymo__about">
+                <img src="./images/t-shirt.png" alt="oymo" class="oymo__about-image">
+                <h2 class="oymo__title">Обзор футболок: OYMO</h2>
+                <h2 class="oymo__title">1000c</h2>
+                <button onclick="addToCart('этно футболка', 1000)">Добавить в корзину</button>
+            </div>
+            <div class="oymo__block">
+                <div class="oymo__box">
+                    <div class="oymo__box-image">
+                        <img src="./images/t-shirt1.png" alt="oymo">
+                    </div>
+                    <h2 class="oymo__title">1000c</h2>
+                    <button onclick="addToCart('этно футболка', 1200)">Добавить в корзину</button>
+                </div>
+                <div class="oymo__box">
+                    <div class="oymo__box-image">
+                        <img src="./images/t-shirt2.png" alt="oymo">
+                    </div>
+                    <h2 class="oymo__title">1000c</h2>
+                    <button onclick="addToCart('этно футболка', 1000)">Добавить в корзину</button>
+                </div>
+                <div class="oymo__box">
+                    <div class="oymo__box-image">
+                        <img src="./images/t-shirt3.png" alt="oymo">
+                    </div>
+                    <h2 class="oymo__title">1000c</h2>
+                    <button onclick="addToCart('этно футболка', 1000)">Добавить в корзину</button>
+                </div>
+                <div class="oymo__box">
+                    <div class="oymo__box-image">
+                        <img src="./images/t-shirt4.png" alt="oymo">
+                    </div>
+                    <h2 class="oymo__title">1000c</h2>
+                    <button onclick="addToCart('этно футболка', 1000)">Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container footer__block">
+            <form class="footer__form">
+                <input type="text" class="footer__input" placeholder="Ваше имя">
+                <textarea class="footer__area" placeholder="Сообщение"></textarea>
+                <button type="submit" class="footer__button">Отправить</button>
+            </form>
+            <nav class="footer__nav">
+                <ul>
+                    <li class="footer__item">
+                        <a href="./t-shirt.html" class="footer__link">Футболки</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="footer__item">
+                        <a href="./sweetshot.html" class="footer__link">Свитшоты</a>
+                    </li>
+                    <li class="footer__item">
+                        <a href="./tolstovka.html" class="footer__link">Толстовки</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- <script src="./js/cart-01.js"></script> -->
+        </div>
+    </footer>
+    <i class="fas fa-shopping-cart cart-icon" onclick="toggleCart()"></i>
+    <div class="cart-container" id="cart-container">
+        <h2>Корзина</h2>
+        <div id="cart"></div>
+        <p id="total"></p>
+    </div>
+    <script>
+        let cart = [];
+
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartElement = document.getElementById('cart');
+            const totalElement = document.getElementById('total');
+            cartElement.innerHTML = '';
+            let total = 0;
+            cart.forEach((product, index) => {
+                cartElement.innerHTML += `<p>${product.item} - ${product.price}c <button onclick="removeFromCart(${index})">Удалить</button></p>`;
+                total += product.price;
+            });
+            totalElement.innerText = `Итого: ${total}c`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function toggleCart() {
+            const cartContainer = document.getElementById('cart-container');
+            cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
+        }
+
+        window.onload = function() {
+            updateCart();
+            toggleCart();  // Ensure the cart is hidden by default
+        }
+    </script>
+</body>
+</html>
